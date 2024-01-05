@@ -1,0 +1,44 @@
+{
+	"user": [
+		{
+			"login": "marlon-Symczecym",
+			"avatar_url": "https://avatars.githubusercontent.com/u/40342789?v=4",
+			"html_url": "https://github.com/marlon-Symczecym",
+			"name": "Marlon Symczecym",
+			"location": "Rio Negrinho, Santa Catarina, Brasil",
+			"email": "marlonsymczecym.dev@gmail.com",
+			"public_repos": 38,
+			"followers": 75,
+			"following": 51,
+			"created_at": "2018-06-17T19:59:06Z",
+			"updated_at": "2024-01-03T12:45:36Z"
+		}
+	],
+	"repos:" [
+		{
+			"name": "api-next-level-week-2",
+			"html_url": "https://github.com/marlon-Symczecym/api-next-level-week-2",
+			"description": null,
+			"created_at": "2020-08-04T20:16:04Z",
+			"updated_at": "2020-08-10T02:25:51Z",
+			"language": "TypeScript",
+		},
+		{
+			"name": "Blink",
+			"html_url": "https://github.com/marlon-Symczecym/Blink",
+			"description": "Projeto de blink feito para arduino.",
+			"created_at": "2019-04-15T22:54:22Z",
+			"updated_at": "2019-04-15T23:19:46Z",
+			"language": "C++",
+		},
+		{
+		"name": "blog-elixir",
+		"html_url": "https://github.com/marlon-Symczecym/blog-elixir",
+		"description": null,
+		"created_at": "2021-01-16T14:41:43Z",
+		"updated_at": "2021-01-28T00:40:45Z",
+		"language": "Elixir",
+		},
+	]
+}
+
