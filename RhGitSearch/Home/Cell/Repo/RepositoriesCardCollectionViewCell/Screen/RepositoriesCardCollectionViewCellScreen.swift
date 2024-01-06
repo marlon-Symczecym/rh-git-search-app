@@ -1,5 +1,5 @@
 //
-//  CardRepositoriesCollectionViewCellScreen.swift
+//  RepositoriesCardCollectionViewCellScreen.swift
 //  RhGitSearch
 //
 //  Created by Marlon Symczecym on 04/01/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CardRepositoriesCollectionViewCellScreen: UIView {
+class RepositoriesCardCollectionViewCellScreen: UIView {
 	
 	lazy var cardRepositoriesRectangleView: UIView = {
 		let view = UIView()

@@ -11,18 +11,30 @@ class RepositoriesCollectionViewCell: UICollectionViewCell {
 	
 	static var identifier: String = "RepositoriesCollectionViewCell"
 	private var screen: RepositoriesCollectionViewCellScreen = RepositoriesCollectionViewCellScreen()
+	private var viewModel: RepositoriesCardCollectionViewCellViewModel = RepositoriesCardCollectionViewCellViewModel()
+	
+	private var userName: String = "marlon-Symczecym"
     
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
 		screen.configProtocolsCollectionView(delegate: self, dataSource: self)
 		
+		viewModel.delegate(delegate: self)
+		
 		configScreen()
 		configConstraints()
+		
+		
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	public func setupCell(userName: String, publicRepo: Int) {
+		screen.repositoriesCountLabel.text = String(publicRepo)
+		viewModel.fetchAllData(userName: userName)
 	}
 	
 	private func configScreen() {
@@ -41,13 +53,29 @@ class RepositoriesCollectionViewCell: UICollectionViewCell {
 	
 }
 
+extension RepositoriesCollectionViewCell: RepositoriesCardCollectionViewCellViewModelProtocol {
+	func success() {
+		print("SUCCESS: -> \(#function)")
+		
+		DispatchQueue.main.async {
+			self.screen.cardRepositoriesCollectionView.reloadData()
+		}
+	}
+	
+	func error(error: String) {
+		print("ERROR: -> \(#function)")
+	}
+}
+
 extension RepositoriesCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 5
+		return viewModel.numberForItems
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardRepositoriesCollectionViewCell.identifier, for: indexPath) as? CardRepositoriesCollectionViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepositoriesCardCollectionViewCell.identifier, for: indexPath) as? RepositoriesCardCollectionViewCell
+		
+		cell?.setupCell(data: viewModel.getRepos(indexPath: indexPath))
 		
 		return cell ?? UICollectionViewCell()
 	}

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeVC.swift
 //  RhGitSearch
 //
 //  Created by Marlon Symczecym on 02/01/24.
@@ -21,14 +21,45 @@ class HomeVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		screen?.configProtocolsCollectionView(delegate: self, dataSource: self)
-//		screen?.cardUserNameLabel.text = viewModel.configUserNameDoubleLine(userName: "marlon Symczecym")
+		
+		screen?.configDelegateTextField(delegate: self)
+		screen?.delegate(delegate: self)
+		screen?.searchTextField.text = "marlon-Symczecym"
+		
+		viewModel.delegate(delegate: self)
 	}
+}
+
+extension HomeVC: HomeScreenProtocol {
+	func tappedSearchButton() {
+		if viewModel.validationTextField(textFieldText: screen?.searchTextField.text ?? "") {
+			viewModel.fetchAllData(userName: screen?.searchTextField.text ?? "")
+		} else {
+			print("Disparar Alert...")
+		}
+	}
+}
+
+extension HomeVC: HomeViewModelProtocol {
+	
+	func sucess() {
+		DispatchQueue.main.async {
+			self.screen?.configProtocolsCollectionView(delegate: self, dataSource: self)
+			self.screen?.repositoriesCollectionView.reloadData()
+			self.screen?.searchTextField.text = ""
+		}
+		
+	}
+	
+	func error(error: String) {
+		print("ERROR -> \(error)")
+	}
+	
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 2
+		viewModel.numberOfItems
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -36,9 +67,13 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 		if indexPath.row == 0 {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardUserCollectionViewCell.identifier, for: indexPath) as? CardUserCollectionViewCell
 			
+			cell?.setupCell(data: viewModel.getUser())
+			
 			return cell ?? UICollectionViewCell()
 		} else {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepositoriesCollectionViewCell.identifier, for: indexPath) as? RepositoriesCollectionViewCell
+			
+			cell?.setupCell(userName: viewModel.getUser().login ?? "",publicRepo: viewModel.getPublicRepos())
 			
 			return cell ?? UICollectionViewCell()
 		}
@@ -48,4 +83,17 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 		
 		viewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame)
 	}
+}
+
+extension HomeVC: UITextFieldDelegate {
+	
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		print(screen?.searchTextField.text ?? "")
+	}
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return false
+	}
+	
 }

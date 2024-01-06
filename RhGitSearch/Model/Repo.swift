@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Repo.swift
 //  RhGitSearch
 //
 //  Created by Marlon Symczecym on 04/01/24.
@@ -7,24 +7,19 @@
 
 import Foundation
 
-struct User: Codable {
-	var login: String?
-	var avatarURL: String?
+struct Repo: Codable {
+	var name: String?
 	var htmlURL: String?
-	var name, location: String?
-	var email: String?
-	var publicRepos, followers, following: Int?
-	var createdAt, updatedAt: Date?
-	var repos: [Repos]
+	var description: String?
+	var createdAt, updatedAt: String?
+	var language: String?
 	
 	enum CodingKeys: String, CodingKey {
-		case login
-		case avatarURL = "avatar_url"
+		case name
 		case htmlURL = "html_url"
-		case name, location, email
-		case publicRepos = "public_repos"
-		case followers, following
+		case description
 		case createdAt = "created_at"
 		case updatedAt = "updated_at"
+		case language
 	}
 }

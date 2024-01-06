@@ -43,7 +43,7 @@ class RepositoriesCollectionViewCellScreen: UIView {
 		cv.backgroundColor = .clear
 		cv.showsVerticalScrollIndicator = false
 
-		cv.register(CardRepositoriesCollectionViewCell.self, forCellWithReuseIdentifier: CardRepositoriesCollectionViewCell.identifier)
+		cv.register(RepositoriesCardCollectionViewCell.self, forCellWithReuseIdentifier: RepositoriesCardCollectionViewCell.identifier)
 		
 		return cv
 	}()

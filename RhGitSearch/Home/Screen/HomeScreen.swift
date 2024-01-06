@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol HomeScreenProtocol: AnyObject {
+	func tappedSearchButton()
+}
+
 class HomeScreen: UIView {
+	
+	private weak var delegate: HomeScreenProtocol?
+	
+	public func delegate(delegate: HomeScreenProtocol?) {
+		self.delegate = delegate
+	}
 	
 	lazy var titleHeaderLabel: UILabel = {
 		let label = UILabel()
@@ -83,7 +93,7 @@ class HomeScreen: UIView {
 	}()
 	
 	@objc func tappedSearchButton(_ sender: UIButton) {
-		print(#function)
+		self.delegate?.tappedSearchButton()
 	}
 	
 	lazy var repositoriesLabel: UILabel = {
@@ -201,6 +211,10 @@ class HomeScreen: UIView {
 			repositoriesCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
 			repositoriesCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
 		])
+	}
+	
+	func configDelegateTextField(delegate: UITextFieldDelegate) {
+		self.searchTextField.delegate = delegate
 	}
 	
 }

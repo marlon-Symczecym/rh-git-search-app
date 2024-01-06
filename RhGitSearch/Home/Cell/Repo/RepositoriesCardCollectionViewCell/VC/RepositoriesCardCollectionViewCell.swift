@@ -1,5 +1,5 @@
 //
-//  CardRepositoriesCollectionViewCell.swift
+//  RepositoriesCardCollectionViewCell.swift
 //  RhGitSearch
 //
 //  Created by Marlon Symczecym on 04/01/24.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CardRepositoriesCollectionViewCell: UICollectionViewCell {
+class RepositoriesCardCollectionViewCell: UICollectionViewCell {
 	
-	static var identifier: String = "CardRepositoriesCollectionViewCell"
-	private var screen: CardRepositoriesCollectionViewCellScreen = CardRepositoriesCollectionViewCellScreen()
+	static var identifier: String = "RepositoriesCardCollectionViewCell"
+	private var screen: RepositoriesCardCollectionViewCellScreen = RepositoriesCardCollectionViewCellScreen()
     
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -21,6 +21,18 @@ class CardRepositoriesCollectionViewCell: UICollectionViewCell {
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	public func setupCell(data: Repo) {
+		screen.titleLabel.text = data.name
+		screen.languageLabel.text = data.language
+		screen.updatedRepositorieLabel.text = data.updatedAt
+	
+		if (data.description ?? "").isEmpty {
+			screen.describeLabel.text = "Repositório sem descrição... :("
+		} else {
+			screen.describeLabel.text = data.description
+		}
 	}
 	
 	private func configScreen() {
