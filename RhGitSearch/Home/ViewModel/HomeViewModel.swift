@@ -54,6 +54,13 @@ class HomeViewModel {
 		}
 	}
 	
+	public func removeSpaceTextField(textField: String)-> String {
+		let replaceSpacesText = textField.replacingOccurrences(of: " ", with: "-", options: .literal, range: nil)
+		let formatText = replaceSpacesText.lowercased()
+		
+		return formatText
+	}
+	
 	public func fetchAllData(userName: String) {
 		service.userGetDataJsonURLSession(userName: userName) { user, error in
 			if error == nil {

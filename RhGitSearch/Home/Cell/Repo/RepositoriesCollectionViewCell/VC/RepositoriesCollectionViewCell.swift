@@ -51,8 +51,6 @@ class RepositoriesCollectionViewCell: UICollectionViewCell {
 
 extension RepositoriesCollectionViewCell: RepositoriesCardCollectionViewCellViewModelProtocol {
 	func success() {
-		print("SUCCESS: -> \(#function)")
-		
 		DispatchQueue.main.async {
 			self.screen.cardRepositoriesCollectionView.reloadData()
 		}

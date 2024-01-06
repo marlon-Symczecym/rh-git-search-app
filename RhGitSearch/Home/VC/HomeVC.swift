@@ -24,7 +24,7 @@ class HomeVC: UIViewController {
 		
 		screen?.configDelegateTextField(delegate: self)
 		screen?.delegate(delegate: self)
-		screen?.searchTextField.text = "marlon-Symczecym"
+		screen?.searchTextField.text = "Marlon Symczecym"
 		
 		viewModel.delegate(delegate: self)
 	}
@@ -33,7 +33,9 @@ class HomeVC: UIViewController {
 extension HomeVC: HomeScreenProtocol {
 	func tappedSearchButton() {
 		if viewModel.validationTextField(textFieldText: screen?.searchTextField.text ?? "") {
-			viewModel.fetchAllData(userName: screen?.searchTextField.text ?? "")
+			let userName = viewModel.removeSpaceTextField(textField: screen?.searchTextField.text ?? "")
+			
+			viewModel.fetchAllData(userName: userName)
 		} else {
 			print("Disparar Alert...")
 		}
