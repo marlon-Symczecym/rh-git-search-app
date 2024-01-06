@@ -31,8 +31,8 @@ class RepositoriesCardCollectionViewCellViewModel {
 		return repos.count
 	}
 	
-	public func fetchAllData(userName: String) {
-		service.reposGetDataJsonURLSession(userName: userName) { repoData, error in
+	public func fetchAllData(reposURL: String) {
+		service.reposGetDataJsonURLSession(reposURL: reposURL) { repoData, error in
 			if error == nil {
 				self.repos = repoData ?? []
 				self.delegate?.success()

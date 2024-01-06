@@ -37,7 +37,6 @@
 		4A7C21752B45841200DEDE40 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C21692B45841200DEDE40 /* Inter-SemiBold.ttf */; };
 		4ACD49AA2B459E3E00846B1F /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACD49A92B459E3E00846B1F /* UIImage + Extension.swift */; };
 		4AD883722B479FBA00E951F4 /* ReposData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AD883712B479FBA00E951F4 /* ReposData.json */; };
-		4AD883742B47A1B700E951F4 /* ReposData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD883732B47A1B700E951F4 /* ReposData.swift */; };
 		4AD883772B482E9100E951F4 /* CardUserCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD883762B482E9100E951F4 /* CardUserCollectionViewCellViewModel.swift */; };
 		4AD8837B2B48316500E951F4 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8837A2B48316500E951F4 /* HomeService.swift */; };
 		4AD8837E2B483C7F00E951F4 /* RepositoriesCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8837D2B483C7F00E951F4 /* RepositoriesCollectionViewCellViewModel.swift */; };
@@ -81,7 +80,6 @@
 		4A7C21692B45841200DEDE40 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		4ACD49A92B459E3E00846B1F /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		4AD883712B479FBA00E951F4 /* ReposData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ReposData.json; sourceTree = "<group>"; };
-		4AD883732B47A1B700E951F4 /* ReposData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposData.swift; sourceTree = "<group>"; };
 		4AD883762B482E9100E951F4 /* CardUserCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUserCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		4AD8837A2B48316500E951F4 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		4AD8837D2B483C7F00E951F4 /* RepositoriesCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			children = (
 				4A599C702B4799FF00181291 /* Repo.swift */,
 				4A599C6E2B47976900181291 /* User.swift */,
-				4AD883732B47A1B700E951F4 /* ReposData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -479,7 +476,6 @@
 				4A599C602B4652E200181291 /* RepositoriesCollectionViewCell.swift in Sources */,
 				4A599C672B46D7B200181291 /* RepositoriesCardCollectionViewCell.swift in Sources */,
 				4A7C215A2B45834900DEDE40 /* UIColor + Extension.swift in Sources */,
-				4AD883742B47A1B700E951F4 /* ReposData.swift in Sources */,
 				4AD8838D2B48DE3300E951F4 /* RepoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

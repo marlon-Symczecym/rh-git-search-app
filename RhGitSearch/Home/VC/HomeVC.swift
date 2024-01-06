@@ -73,7 +73,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 		} else {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepositoriesCollectionViewCell.identifier, for: indexPath) as? RepositoriesCollectionViewCell
 			
-			cell?.setupCell(userName: viewModel.getUser().login ?? "",publicRepo: viewModel.getPublicRepos())
+			cell?.setupCell(reposURL: viewModel.getUser().reposURL ?? "",publicRepo: viewModel.getPublicRepos())
 			
 			return cell ?? UICollectionViewCell()
 		}

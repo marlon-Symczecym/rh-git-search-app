@@ -44,7 +44,7 @@ class UserService {
 		task.resume()
 	}
 	
-	 public func userGetDataJson(completion: @escaping(User?, Error?)-> Void) {
+	public func getDataJsonMock(userName: String, completion: @escaping(User?, Error?)-> Void) {
 		if let url = Bundle.main.url(forResource: "UserData", withExtension: "json") {
 			do {
 				let data = try Data(contentsOf: url)

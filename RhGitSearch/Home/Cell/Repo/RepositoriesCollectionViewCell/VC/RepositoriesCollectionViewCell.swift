@@ -12,8 +12,6 @@ class RepositoriesCollectionViewCell: UICollectionViewCell {
 	static var identifier: String = "RepositoriesCollectionViewCell"
 	private var screen: RepositoriesCollectionViewCellScreen = RepositoriesCollectionViewCellScreen()
 	private var viewModel: RepositoriesCardCollectionViewCellViewModel = RepositoriesCardCollectionViewCellViewModel()
-	
-	private var userName: String = "marlon-Symczecym"
     
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -24,17 +22,15 @@ class RepositoriesCollectionViewCell: UICollectionViewCell {
 		
 		configScreen()
 		configConstraints()
-		
-		
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func setupCell(userName: String, publicRepo: Int) {
+	public func setupCell(reposURL: String, publicRepo: Int) {
 		screen.repositoriesCountLabel.text = String(publicRepo)
-		viewModel.fetchAllData(userName: userName)
+		viewModel.fetchAllData(reposURL: reposURL)
 	}
 	
 	private func configScreen() {
@@ -81,6 +77,7 @@ extension RepositoriesCollectionViewCell: UICollectionViewDelegate, UICollection
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		
 		return CGSize(width: collectionView.frame.width, height: 165)
 	}
 }

@@ -11,6 +11,7 @@ struct User: Codable {
 	var login: String?
 	var avatarURL: String?
 	var htmlURL: String?
+	var reposURL: String?
 	var name, location: String?
 	var email: String?
 	var publicRepos, followers, following: Int?
@@ -20,6 +21,7 @@ struct User: Codable {
 		case login
 		case avatarURL = "avatar_url"
 		case htmlURL = "html_url"
+		case reposURL = "repos_url"
 		case name, location, email
 		case publicRepos = "public_repos"
 		case followers, following

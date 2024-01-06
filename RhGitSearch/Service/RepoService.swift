@@ -14,8 +14,8 @@ enum ReposErrorDetail: Swift.Error {
 
 class RepoService {
 	
-	public func reposGetDataJsonURLSession(userName: String, completion: @escaping([Repo]?, Error?)-> Void) {
-		let urlString: String = "https://api.github.com/users/\(userName)/repos"
+	public func reposGetDataJsonURLSession(reposURL: String, completion: @escaping([Repo]?, Error?)-> Void) {
+		let urlString: String = reposURL
 		
 		guard let url: URL = URL(string: urlString) else {
 			return completion(nil, ReposErrorDetail.errorURL(urlString: urlString))
@@ -43,7 +43,7 @@ class RepoService {
 		task.resume()
 	}
 	
-	public func resposGetDataJsonMock(userName: String, completion: @escaping([Repo]?, Error?)-> Void) {
+	public func getDataJsonMock(userName: String, completion: @escaping([Repo]?, Error?)-> Void) {
 		if let url = Bundle.main.url(forResource: "ReposData", withExtension: "json") {
 			do {
 				let data = try Data(contentsOf: url)
@@ -56,5 +56,4 @@ class RepoService {
 			}
 		}
 	}
-	
 }
