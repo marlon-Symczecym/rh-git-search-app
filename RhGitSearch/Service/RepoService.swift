@@ -43,7 +43,7 @@ class RepoService {
 		task.resume()
 	}
 	
-	public func getDataJsonMock(userName: String, completion: @escaping([Repo]?, Error?)-> Void) {
+	public func getDataJsonMock(reposURL: String, completion: @escaping([Repo]?, Error?)-> Void) {
 		if let url = Bundle.main.url(forResource: "ReposData", withExtension: "json") {
 			do {
 				let data = try Data(contentsOf: url)

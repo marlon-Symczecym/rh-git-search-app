@@ -26,7 +26,9 @@ class RepositoriesCardCollectionViewCell: UICollectionViewCell {
 	public func setupCell(data: Repo) {
 		screen.titleLabel.text = data.name
 		screen.languageLabel.text = data.language
-		screen.updatedRepositorieLabel.text = data.updatedAt
+		
+		let dateString = DateFormatter.updatedDateFormatter(dateString: data.updatedAt ?? "")
+		screen.updatedRepositorieLabel.text = "Atualizado em \(dateString)"
 	
 		if (data.description ?? "").isEmpty {
 			screen.describeLabel.text = "Repositório sem descrição... :("

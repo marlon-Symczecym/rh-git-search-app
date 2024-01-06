@@ -24,7 +24,6 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "api-next-level-week-2"
 		label.textColor = .darkGray
 		label.font = UIFont.customFont(type: .bold, size: 20)
 		label.textAlignment = .left
@@ -37,7 +36,6 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Esse projeto foi totalmente desenvolvido em Python, e feito para o terminal do seu sistema, mais conhecido como cmd ou prompt..."
 		label.textColor = .mediumGray
 		label.font = UIFont.customFont(type: .regular, size: 14)
 		label.textAlignment = .justified
@@ -50,7 +48,6 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "TypeScript"
 		label.textColor = .detailBlue
 		label.font = UIFont.customFont(type: .medium, size: 12)
 		
@@ -61,7 +58,6 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Update on Jan 5, 2023"
 		label.textColor = .darkGray
 		label.font = UIFont.customFont(type: .bold, size: 12)
 		label.textAlignment = .left

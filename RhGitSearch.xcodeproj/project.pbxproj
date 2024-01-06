@@ -45,6 +45,7 @@
 		4AD8838B2B48A67F00E951F4 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8838A2B48A67F00E951F4 /* UIImageView + Extension.swift */; };
 		4AD8838D2B48DE3300E951F4 /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8838C2B48DE3300E951F4 /* RepoService.swift */; };
 		4AD883902B48E5C100E951F4 /* RepositoriesCardCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8838F2B48E5C100E951F4 /* RepositoriesCardCollectionViewCellViewModel.swift */; };
+		4AD883922B49CB7400E951F4 /* DateFormatter + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD883912B49CB7400E951F4 /* DateFormatter + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		4AD8838A2B48A67F00E951F4 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		4AD8838C2B48DE3300E951F4 /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
 		4AD8838F2B48E5C100E951F4 /* RepositoriesCardCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesCardCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		4AD883912B49CB7400E951F4 /* DateFormatter + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 		4A7C21582B45832300DEDE40 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4AD883912B49CB7400E951F4 /* DateFormatter + Extension.swift */,
 				4AD8838A2B48A67F00E951F4 /* UIImageView + Extension.swift */,
 				4A7C21592B45834900DEDE40 /* UIColor + Extension.swift */,
 				4A7C215B2B45837800DEDE40 /* UIFont + Extension.swift */,
@@ -458,6 +461,7 @@
 				4A7C215C2B45837800DEDE40 /* UIFont + Extension.swift in Sources */,
 				4A599C6C2B46F48900181291 /* UIView + Extension.swift in Sources */,
 				4A599C592B45B1FA00181291 /* CardUserCollectionViewCellScreen.swift in Sources */,
+				4AD883922B49CB7400E951F4 /* DateFormatter + Extension.swift in Sources */,
 				4A7C21562B44B8FC00DEDE40 /* HomeScreen.swift in Sources */,
 				4AD883842B487CE500E951F4 /* UserService.swift in Sources */,
 				4A599C6F2B47976900181291 /* User.swift in Sources */,

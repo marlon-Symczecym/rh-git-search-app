@@ -96,30 +96,6 @@ class HomeScreen: UIView {
 		self.delegate?.tappedSearchButton()
 	}
 	
-	lazy var repositoriesLabel: UILabel = {
-		let label = UILabel()
-		
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Repositórios:"
-		label.textColor = .darkGray
-		label.font = UIFont.customFont(type: .extraBold, size: 20)
-		label.textAlignment = .left
-		
-		return label
-	}()
-	
-	lazy var repositoriesNumberLabel: UILabel = {
-		let label = UILabel()
-		
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "30"
-		label.textColor = .darkGray
-		label.font = UIFont.customFont(type: .extraBold, size: 20)
-		label.textAlignment = .left
-		
-		return label
-	}()
-	
 	lazy var repositoriesCollectionView: UICollectionView = {
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .vertical
@@ -216,5 +192,4 @@ class HomeScreen: UIView {
 	func configDelegateTextField(delegate: UITextFieldDelegate) {
 		self.searchTextField.delegate = delegate
 	}
-	
 }

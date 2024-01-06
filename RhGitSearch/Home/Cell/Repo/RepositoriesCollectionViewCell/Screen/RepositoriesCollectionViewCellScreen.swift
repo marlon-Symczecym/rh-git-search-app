@@ -25,7 +25,6 @@ class RepositoriesCollectionViewCellScreen: UIView {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "30"
 		label.textColor = .darkGray
 		label.font = UIFont.customFont(type: .extraBold, size: 20)
 		label.textAlignment = .left
