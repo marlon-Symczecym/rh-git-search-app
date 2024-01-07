@@ -84,9 +84,10 @@ class HomeScreen: UIView {
 		button.setTitle("Buscar", for: .normal)
 		button.setTitleColor(.darkGray, for: .normal)
 		button.titleLabel?.font = UIFont.customFont(type: .bold, size: 18)
-		button.backgroundColor = .detailYellow
+		button.backgroundColor = .detailYellow.withAlphaComponent(0.7)
 		button.clipsToBounds = true
 		button.layer.cornerRadius = 8
+		button.isEnabled = false
 		button.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
 		
 		return button

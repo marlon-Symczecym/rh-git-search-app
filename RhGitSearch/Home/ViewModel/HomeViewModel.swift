@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RegexBuilder
 
 protocol HomeViewModelProtocol: AnyObject {
 	func sucess()
@@ -43,11 +44,20 @@ class HomeViewModel {
 		}
 	}
 	
-	public func validationTextField(textFieldText: String)-> Bool {
-		if !textFieldText.isEmpty &&
-			textFieldText.count >= 4 &&
-			textFieldText.count <= 100 {
+	public func completeValidationTextField(textField: String)-> Bool {
+		if !textField.isEmpty &&
+			textField.count >= 4 &&
+			textField.count <= 100 &&
+			textRegexValidate(textField: textField) {
 			
+			return true
+		} else {
+			return false
+		}
+	}
+	
+	public func textRegexValidate(textField: String)-> Bool {
+		if ((textField.wholeMatch(of: CustomRegex.regex)?.output) != nil){
 			return true
 		} else {
 			return false

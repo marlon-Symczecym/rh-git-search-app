@@ -35,13 +35,8 @@ class HomeVC: UIViewController {
 
 extension HomeVC: HomeScreenProtocol {
 	func tappedSearchButton() {
-		if viewModel.validationTextField(textFieldText: screen?.searchTextField.text ?? "") {
 			let userName = viewModel.removeSpaceTextField(textField: screen?.searchTextField.text ?? "")
-			
 			viewModel.fetchAllData(userName: userName)
-		} else {
-			alert?.simpleAlert(title: "ATENÇÃO", message: "Forneça o nome válido de um usuário!")
-		}
 	}
 }
 
@@ -56,7 +51,7 @@ extension HomeVC: HomeViewModelProtocol {
 	}
 	
 	func error(error: String) {
-		print("ERROR -> \(error)")
+		alert?.simpleAlert(title: "ATENÇÃO", message: "Forneça o nome válido de um usuário!")
 	}
 	
 }
@@ -91,8 +86,14 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 
 extension HomeVC: UITextFieldDelegate {
 	
-	func textFieldDidEndEditing(_ textField: UITextField) {
-		viewModel.teste(textField: screen?.searchTextField.text ?? "")
+	func textFieldDidChangeSelection(_ textField: UITextField) {
+		if viewModel.completeValidationTextField(textField: screen?.searchTextField.text ?? "") {
+			screen?.searchButton.backgroundColor = .detailYellow
+			screen?.searchButton.isEnabled = true
+		} else {
+			screen?.searchButton.backgroundColor = .detailYellow.withAlphaComponent(0.7)
+			screen?.searchButton.isEnabled = false
+		}
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
