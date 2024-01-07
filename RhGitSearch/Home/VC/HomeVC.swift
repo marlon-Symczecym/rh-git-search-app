@@ -11,6 +11,7 @@ class HomeVC: UIViewController {
 	
 	private var screen: HomeScreen?
 	private var viewModel: HomeViewModel = HomeViewModel()
+	private var alert: CustomAlert?
 	
 	override func loadView() {
 		screen = HomeScreen()
@@ -21,9 +22,11 @@ class HomeVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		alert = CustomAlert(controller: self)
 		
 		screen?.configDelegateTextField(delegate: self)
 		screen?.delegate(delegate: self)
+		
 		screen?.searchTextField.text = "Marlon Symczecym"
 		
 		viewModel.delegate(delegate: self)
@@ -37,7 +40,7 @@ extension HomeVC: HomeScreenProtocol {
 			
 			viewModel.fetchAllData(userName: userName)
 		} else {
-			print("Disparar Alert...")
+			alert?.simpleAlert(title: "ATENÇÃO", message: "Forneça o nome válido de um usuário!")
 		}
 	}
 }
@@ -50,7 +53,6 @@ extension HomeVC: HomeViewModelProtocol {
 			self.screen?.repositoriesCollectionView.reloadData()
 			self.screen?.searchTextField.text = ""
 		}
-		
 	}
 	
 	func error(error: String) {
@@ -90,7 +92,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 extension HomeVC: UITextFieldDelegate {
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
-		print(screen?.searchTextField.text ?? "")
+		viewModel.teste(textField: screen?.searchTextField.text ?? "")
 	}
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -46,6 +46,7 @@
 		4AD8838D2B48DE3300E951F4 /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8838C2B48DE3300E951F4 /* RepoService.swift */; };
 		4AD883902B48E5C100E951F4 /* RepositoriesCardCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8838F2B48E5C100E951F4 /* RepositoriesCardCollectionViewCellViewModel.swift */; };
 		4AD883922B49CB7400E951F4 /* DateFormatter + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD883912B49CB7400E951F4 /* DateFormatter + Extension.swift */; };
+		4AD883942B49D6C400E951F4 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD883932B49D6C400E951F4 /* CustomAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		4AD8838C2B48DE3300E951F4 /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
 		4AD8838F2B48E5C100E951F4 /* RepositoriesCardCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesCardCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		4AD883912B49CB7400E951F4 /* DateFormatter + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Extension.swift"; sourceTree = "<group>"; };
+		4AD883932B49D6C400E951F4 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 		4A7C21572B45831800DEDE40 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4AD883932B49D6C400E951F4 /* CustomAlert.swift */,
 				4A7C21582B45832300DEDE40 /* Extensions */,
 			);
 			path = Utils;
@@ -468,6 +471,7 @@
 				4AD883902B48E5C100E951F4 /* RepositoriesCardCollectionViewCellViewModel.swift in Sources */,
 				4AD883772B482E9100E951F4 /* CardUserCollectionViewCellViewModel.swift in Sources */,
 				4A599C712B4799FF00181291 /* Repo.swift in Sources */,
+				4AD883942B49D6C400E951F4 /* CustomAlert.swift in Sources */,
 				4A599C622B46556C00181291 /* RepositoriesCollectionViewCellScreen.swift in Sources */,
 				4AD8837B2B48316500E951F4 /* HomeService.swift in Sources */,
 				4AD8838B2B48A67F00E951F4 /* UIImageView + Extension.swift in Sources */,
