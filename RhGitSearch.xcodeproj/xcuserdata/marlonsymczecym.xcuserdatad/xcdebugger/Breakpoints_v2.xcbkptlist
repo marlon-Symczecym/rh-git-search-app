@@ -3,4 +3,150 @@
    uuid = "11BC3AF5-1648-465C-95D9-A2786A4BD768"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF8BC4C7-8E3F-45F0-A1D8-790601E08F1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RhGitSearch/Utils/Extensions/UIViewController + Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "spinnerStart(screen:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF8BC4C7-8E3F-45F0-A1D8-790601E08F1A - b9544c5a3292c87a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.spinnerStart() -&gt; ()"
+                  moduleName = "RhGitSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marlonsymczecym/Desktop/Cursos/BackFront%20Academy/Jornada%20IOS/ESTUDOS/RhGitSearch/RhGitSearch/Utils/Extensions/UIViewController%20+%20Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "EF8BC4C7-8E3F-45F0-A1D8-790601E08F1A - 3c4ea0f520ce08f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.spinnerStart(screen: Swift.Optional&lt;__C.UIView&gt;) -&gt; ()"
+                  moduleName = "RhGitSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marlonsymczecym/Desktop/Cursos/BackFront%20Academy/Jornada%20IOS/ESTUDOS/RhGitSearch/RhGitSearch/Utils/Extensions/UIViewController%20+%20Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87778048-C95E-4C12-8783-33FBBCFA3E79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RhGitSearch/Utils/Extensions/UIViewController + Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "spinnerStop(screen:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "87778048-C95E-4C12-8783-33FBBCFA3E79 - a00f4f6dfb6b4c4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.spinnerStop() -&gt; ()"
+                  moduleName = "RhGitSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marlonsymczecym/Desktop/Cursos/BackFront%20Academy/Jornada%20IOS/ESTUDOS/RhGitSearch/RhGitSearch/Utils/Extensions/UIViewController%20+%20Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "87778048-C95E-4C12-8783-33FBBCFA3E79 - 8109736274f40f8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.spinnerStop(screen: Swift.Optional&lt;__C.UIView&gt;) -&gt; ()"
+                  moduleName = "RhGitSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marlonsymczecym/Desktop/Cursos/BackFront%20Academy/Jornada%20IOS/ESTUDOS/RhGitSearch/RhGitSearch/Utils/Extensions/UIViewController%20+%20Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A14FE09-D069-40C4-9E71-F503362859FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RhGitSearch/Utils/Extensions/UIViewController + Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "spinnerStart(screen:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0A14FE09-D069-40C4-9E71-F503362859FE - b9544c5a3292c8fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.spinnerStart() -&gt; ()"
+                  moduleName = "RhGitSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marlonsymczecym/Desktop/Cursos/BackFront%20Academy/Jornada%20IOS/ESTUDOS/RhGitSearch/RhGitSearch/Utils/Extensions/UIViewController%20+%20Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "640">
+               </Location>
+               <Location
+                  uuid = "0A14FE09-D069-40C4-9E71-F503362859FE - 3c4ea0f520ce085f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIViewController.spinnerStart(screen: Swift.Optional&lt;__C.UIView&gt;) -&gt; ()"
+                  moduleName = "RhGitSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marlonsymczecym/Desktop/Cursos/BackFront%20Academy/Jornada%20IOS/ESTUDOS/RhGitSearch/RhGitSearch/Utils/Extensions/UIViewController%20+%20Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "728">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

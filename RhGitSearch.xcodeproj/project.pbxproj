@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A10ED022B4AF51D006DF80E /* DateFormatter + Extension copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10ED012B4AF51D006DF80E /* DateFormatter + Extension copy.swift */; };
+		4A10ED082B4C3CCD006DF80E /* CustomSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A10ED072B4C3CCC006DF80E /* CustomSpinner.swift */; };
 		4A599C512B45A3D400181291 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A599C502B45A3D400181291 /* UITextField + Extension.swift */; };
 		4A599C572B45B19E00181291 /* CardUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A599C562B45B19E00181291 /* CardUserCollectionViewCell.swift */; };
 		4A599C592B45B1FA00181291 /* CardUserCollectionViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A599C582B45B1FA00181291 /* CardUserCollectionViewCellScreen.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		4A10ED012B4AF51D006DF80E /* DateFormatter + Extension copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Extension copy.swift"; sourceTree = "<group>"; };
+		4A10ED072B4C3CCC006DF80E /* CustomSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpinner.swift; sourceTree = "<group>"; };
 		4A599C502B45A3D400181291 /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		4A599C562B45B19E00181291 /* CardUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUserCollectionViewCell.swift; sourceTree = "<group>"; };
 		4A599C582B45B1FA00181291 /* CardUserCollectionViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUserCollectionViewCellScreen.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			children = (
 				4AD883932B49D6C400E951F4 /* CustomAlert.swift */,
 				4AD883912B49CB7400E951F4 /* CustomRegex.swift */,
+				4A10ED072B4C3CCC006DF80E /* CustomSpinner.swift */,
 				4A7C21582B45832300DEDE40 /* Extensions */,
 			);
 			path = Utils;
@@ -482,6 +485,7 @@
 				4A599C572B45B19E00181291 /* CardUserCollectionViewCell.swift in Sources */,
 				4A7C21422B44B81B00DEDE40 /* HomeVC.swift in Sources */,
 				4A7C213E2B44B81B00DEDE40 /* AppDelegate.swift in Sources */,
+				4A10ED082B4C3CCD006DF80E /* CustomSpinner.swift in Sources */,
 				4AD8837E2B483C7F00E951F4 /* RepositoriesCollectionViewCellViewModel.swift in Sources */,
 				4A599C692B46D7E600181291 /* RepositoriesCardCollectionViewCellScreen.swift in Sources */,
 				4A7C21402B44B81B00DEDE40 /* SceneDelegate.swift in Sources */,
