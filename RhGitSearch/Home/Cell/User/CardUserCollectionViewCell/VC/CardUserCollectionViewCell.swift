@@ -31,6 +31,7 @@ class CardUserCollectionViewCell: UICollectionViewCell {
 		screen.cardUserFollowingNumberLabel.text = String(data.following ?? 0)
 		screen.cardUserLocationLabel.text = data.location
 		screen.cardUserAvatarImage.loadImageFromRemoteURL(url: data.avatarURL ?? "")
+		
 	}
 	
 	private func configScreen() {

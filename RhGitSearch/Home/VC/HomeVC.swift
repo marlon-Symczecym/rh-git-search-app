@@ -12,7 +12,6 @@ class HomeVC: UIViewController {
 	private var screen: HomeScreen?
 	private var viewModel: HomeViewModel = HomeViewModel()
 	private var alert: CustomAlert?
-	private var spinner: CustomSpinner?
 	
 	override func loadView() {
 		screen = HomeScreen()
@@ -24,11 +23,9 @@ class HomeVC: UIViewController {
 		super.viewDidLoad()
 		
 		alert = CustomAlert(controller: self)
-		spinner = CustomSpinner(controller: self)
 		
 		screen?.configDelegateTextField(delegate: self)
 		screen?.delegate(delegate: self)
-		
 		
 		screen?.searchTextField.text = "Marlon Symczecym"
 		
@@ -38,10 +35,8 @@ class HomeVC: UIViewController {
 
 extension HomeVC: HomeScreenProtocol {
 	func tappedSearchButton() {
-		spinner?.spinnerStart()
-		
-		let userName = viewModel.removeSpaceTextField(textField: screen?.searchTextField.text ?? "")
-		viewModel.fetchAllData(userName: userName)
+			let userName = viewModel.removeSpaceTextField(textField: screen?.searchTextField.text ?? "")
+			viewModel.fetchAllData(userName: userName)
 	}
 }
 
@@ -49,16 +44,14 @@ extension HomeVC: HomeViewModelProtocol {
 	
 	func sucess() {
 		DispatchQueue.main.async {
-			self.spinner?.spinnerStop()
 			self.screen?.configProtocolsCollectionView(delegate: self, dataSource: self)
 			self.screen?.repositoriesCollectionView.reloadData()
 			self.screen?.searchTextField.text = ""
 		}
 	}
-
+	
 	func error(error: String) {
 		DispatchQueue.main.async {
-			self.spinner?.spinnerStop()
 			self.alert?.simpleAlert(title: "ATENÇÃO", message: "Usuário não encontrado")
 			self.screen?.searchTextField.text = ""
 		}
