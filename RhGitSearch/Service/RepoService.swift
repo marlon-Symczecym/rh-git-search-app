@@ -9,7 +9,7 @@ import Foundation
 
 enum ReposErrorDetail: Swift.Error {
 	case errorURL(urlString: String)
-	case detailError(datail: String)
+	case detailError(detail: String)
 }
 
 class RepoService {
@@ -26,7 +26,7 @@ class RepoService {
 		
 		let task = URLSession.shared.dataTask(with: request) { data, response, error in
 			guard let dataResult = data else {
-				return completion(nil, ReposErrorDetail.detailError(datail: "Error Data"))
+				return completion(nil, ReposErrorDetail.detailError(detail: "Error Data"))
 			}
 			
 			guard let response = response as? HTTPURLResponse else { return }

@@ -12,6 +12,7 @@ class HomeVC: UIViewController {
 	private var screen: HomeScreen?
 	private var viewModel: HomeViewModel = HomeViewModel()
 	private var alert: CustomAlert?
+	private var loading: CustomLoading?
 	
 	override func loadView() {
 		screen = HomeScreen()
@@ -23,6 +24,7 @@ class HomeVC: UIViewController {
 		super.viewDidLoad()
 		
 		alert = CustomAlert(controller: self)
+		loading = CustomLoading(controller: self)
 		
 		screen?.configDelegateTextField(delegate: self)
 		screen?.delegate(delegate: self)
@@ -35,8 +37,10 @@ class HomeVC: UIViewController {
 
 extension HomeVC: HomeScreenProtocol {
 	func tappedSearchButton() {
-			let userName = viewModel.removeSpaceTextField(textField: screen?.searchTextField.text ?? "")
-			viewModel.fetchAllData(userName: userName)
+		loading?.start()
+		
+		let userName = viewModel.removeSpaceTextField(textField: screen?.searchTextField.text ?? "")
+		viewModel.fetchAllData(userName: userName)
 	}
 }
 
@@ -44,6 +48,8 @@ extension HomeVC: HomeViewModelProtocol {
 	
 	func sucess() {
 		DispatchQueue.main.async {
+			self.loading?.stop()
+			
 			self.screen?.configProtocolsCollectionView(delegate: self, dataSource: self)
 			self.screen?.repositoriesCollectionView.reloadData()
 			self.screen?.searchTextField.text = ""
@@ -52,6 +58,8 @@ extension HomeVC: HomeViewModelProtocol {
 	
 	func error(error: String) {
 		DispatchQueue.main.async {
+			self.loading?.stop()
+			
 			self.alert?.simpleAlert(title: "ATENÇÃO", message: "Usuário não encontrado")
 			self.screen?.searchTextField.text = ""
 		}
