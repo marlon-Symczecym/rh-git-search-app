@@ -51,7 +51,10 @@ extension HomeVC: HomeViewModelProtocol {
 	}
 	
 	func error(error: String) {
-		alert?.simpleAlert(title: "ATENÇÃO", message: "Forneça o nome válido de um usuário!")
+		DispatchQueue.main.async {
+			self.alert?.simpleAlert(title: "ATENÇÃO", message: "Usuário não encontrado")
+			self.screen?.searchTextField.text = ""
+		}
 	}
 	
 }

@@ -39,7 +39,10 @@ class UserService {
 				} catch {
 					completion(nil, error)
 				}
+			} else if response.statusCode == 404 {
+				completion(nil, UserErrorDetail.detailError(detail: "Error 404 Not Found"))
 			}
+			
 		}
 		task.resume()
 	}
