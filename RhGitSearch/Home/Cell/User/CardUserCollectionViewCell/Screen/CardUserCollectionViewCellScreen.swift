@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol CardUserCollectionViewCellScreenProtocol: AnyObject {
+	func tappedCardUserButtonURL()
+}
+
 class CardUserCollectionViewCellScreen: UIView {
+	
+	private weak var delegate: CardUserCollectionViewCellScreenProtocol?
+	
+	public func delegate(delegate: CardUserCollectionViewCellScreenProtocol?) {
+		self.delegate = delegate
+	}
 	
 	lazy var cardUserRectangleView: UIView = {
 		let view = UIView()
@@ -91,6 +101,25 @@ class CardUserCollectionViewCellScreen: UIView {
 		return label
 	}()
 	
+	lazy var cardUserButtonURL: UIButton = {
+		let button = UIButton()
+		
+		button.translatesAutoresizingMaskIntoConstraints = false
+		button.setTitle("Veja mais", for: .normal)
+		button.titleLabel?.font = UIFont.customFont(type: .bold, size: 14)
+		button.setTitleColor(.primaryDarkGreen, for: .normal)
+		button.backgroundColor = .white
+		button.clipsToBounds = true
+		button.layer.cornerRadius = 8
+		button.addTarget(self, action: #selector(tappedCardUserButtonURL), for: .touchUpInside)
+		
+		return button
+	}()
+	
+	@objc func tappedCardUserButtonURL() {
+		self.delegate?.tappedCardUserButtonURL()
+	}
+	
 	lazy var cardUserLocationLabel: UILabel = {
 		let label = UILabel()
 		
@@ -145,6 +174,7 @@ class CardUserCollectionViewCellScreen: UIView {
 		cardUserRectangleView.addSubview(cardUserFollowersNumberLabel)
 		cardUserRectangleView.addSubview(cardUserFollowingLabel)
 		cardUserRectangleView.addSubview(cardUserFollowingNumberLabel)
+		cardUserRectangleView.addSubview(cardUserButtonURL)
 		cardUserRectangleView.addSubview(cardUserLocationLabel)
 		addSubview(cardUserCircleAvatarView)
 		cardUserCircleAvatarView.addSubview(cardUserAvatarImage)
@@ -184,6 +214,12 @@ class CardUserCollectionViewCellScreen: UIView {
 			// cardUserFollowingNumberLabel
 			cardUserFollowingNumberLabel.topAnchor.constraint(equalTo: cardUserFollowingLabel.topAnchor),
 			cardUserFollowingNumberLabel.leadingAnchor.constraint(equalTo: cardUserFollowingLabel.trailingAnchor, constant: 5),
+			
+			// cardUserButtonUrl
+			cardUserButtonURL.topAnchor.constraint(equalTo: cardUserFollowingLabel.bottomAnchor, constant: 20),
+			cardUserButtonURL.leadingAnchor.constraint(equalTo: cardUserFollowingLabel.leadingAnchor),
+			cardUserButtonURL.widthAnchor.constraint(equalToConstant: 100),
+			cardUserButtonURL.heightAnchor.constraint(equalToConstant: 30),
 			
 			// cardUserLocationLabel
 			cardUserLocationLabel.leadingAnchor.constraint(equalTo: cardUserNameLabel.leadingAnchor),

@@ -11,9 +11,12 @@ class RepositoriesCardCollectionViewCell: UICollectionViewCell {
 	
 	static var identifier: String = "RepositoriesCardCollectionViewCell"
 	private var screen: RepositoriesCardCollectionViewCellScreen = RepositoriesCardCollectionViewCellScreen()
+	private var repoURL: String?
     
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+		
+		screen.delegate(delegate: self)
 		
 		configScreen()
 		configConstraints()
@@ -26,6 +29,8 @@ class RepositoriesCardCollectionViewCell: UICollectionViewCell {
 	public func setupCell(data: Repo) {
 		screen.titleLabel.text = data.name
 		screen.languageLabel.text = data.language
+		
+		repoURL = data.htmlURL
 		
 		let dateString = DateFormatter.updatedDateFormatter(dateString: data.updatedAt ?? "")
 		screen.updatedRepositorieLabel.text = "Atualizado em \(dateString)"
@@ -51,4 +56,12 @@ class RepositoriesCardCollectionViewCell: UICollectionViewCell {
 		])
 	}
 	
+}
+
+extension RepositoriesCardCollectionViewCell: RepositoriesCardCollectionViewCellScreenProtocol {
+	func tappedRepoButtonURL() {
+		guard let url = URL(string: self.repoURL ?? "") else { return }
+		
+		UIApplication.shared.open(url)
+	}
 }

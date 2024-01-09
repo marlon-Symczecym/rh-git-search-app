@@ -15,7 +15,7 @@ class RepositoriesCollectionViewCell: UICollectionViewCell {
     
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		
+				
 		screen.configProtocolsCollectionView(delegate: self, dataSource: self)
 		
 		viewModel.delegate(delegate: self)

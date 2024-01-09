@@ -5,6 +5,7 @@
 //  Created by Marlon Symczecym on 03/01/24.
 //
 
+import Foundation
 import UIKit
 
 class CardUserCollectionViewCell: UICollectionViewCell {
@@ -13,9 +14,13 @@ class CardUserCollectionViewCell: UICollectionViewCell {
 	
 	private var screen: CardUserCollectionViewCellScreen = CardUserCollectionViewCellScreen()
 	private var viewModel: CardUserCollectionViewCellViewModel = CardUserCollectionViewCellViewModel()
+	
+	private var userURL: String?
     
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+		
+		screen.delegate(delegate: self)
 		
 		configScreen()
 		configConstraints()
@@ -31,6 +36,7 @@ class CardUserCollectionViewCell: UICollectionViewCell {
 		screen.cardUserFollowingNumberLabel.text = String(data.following ?? 0)
 		screen.cardUserLocationLabel.text = data.location
 		screen.cardUserAvatarImage.loadImageFromRemoteURL(url: data.avatarURL ?? "")
+		userURL = data.htmlURL ?? ""
 	}
 	
 	private func configScreen() {
@@ -45,5 +51,12 @@ class CardUserCollectionViewCell: UICollectionViewCell {
 			screen.trailingAnchor.constraint(equalTo: trailingAnchor),
 			screen.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
 		])
+	}
+}
+
+extension CardUserCollectionViewCell: CardUserCollectionViewCellScreenProtocol {
+	func tappedCardUserButtonURL() {
+		guard let url = URL(string: userURL ?? "") else { return }
+		UIApplication.shared.open(url)
 	}
 }

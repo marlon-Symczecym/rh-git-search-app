@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol RepositoriesCardCollectionViewCellScreenProtocol: AnyObject {
+	func tappedRepoButtonURL()
+}
+
 class RepositoriesCardCollectionViewCellScreen: UIView {
+	
+	private weak var delegate: RepositoriesCardCollectionViewCellScreenProtocol?
+	
+	public func delegate(delegate: RepositoriesCardCollectionViewCellScreenProtocol?) {
+		self.delegate = delegate
+	}
 	
 	lazy var cardRepositoriesRectangleView: UIView = {
 		let view = UIView()
@@ -31,6 +41,27 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 		
 		return label
 	}()
+	
+	lazy var repoButtonURL: UIButton = {
+		let button = UIButton()
+		
+		button.translatesAutoresizingMaskIntoConstraints = false
+
+		button.setTitle("Ir", for: .normal)
+		button.titleLabel?.textAlignment = .left
+		button.titleLabel?.font = UIFont.customFont(type: .medium, size: 14)
+		button.backgroundColor = .primaryDarkGreen
+		button.setTitleColor(.white, for: .normal)
+		button.roundCorners(cornerRadiuns: 15, typeCorners: [.bottomLeft])
+
+		button.addTarget(self, action: #selector(tappedRepoButtonURL), for: .touchUpInside)
+		
+		return button
+	}()
+	
+	@objc func tappedRepoButtonURL() {
+		self.delegate?.tappedRepoButtonURL()
+	}
 	
 	lazy var describeLabel: UILabel = {
 		let label = UILabel()
@@ -80,6 +111,7 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 	private func addElements() {
 		addSubview(cardRepositoriesRectangleView)
 		cardRepositoriesRectangleView.addSubview(titleLabel)
+		cardRepositoriesRectangleView.addSubview(repoButtonURL)
 		cardRepositoriesRectangleView.addSubview(describeLabel)
 		cardRepositoriesRectangleView.addSubview(languageLabel)
 		cardRepositoriesRectangleView.addSubview(updatedRepositorieLabel)
@@ -97,6 +129,12 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 			titleLabel.topAnchor.constraint(equalTo: cardRepositoriesRectangleView.topAnchor, constant: 20),
 			titleLabel.leadingAnchor.constraint(equalTo: cardRepositoriesRectangleView.leadingAnchor, constant: 20),
 			titleLabel.trailingAnchor.constraint(equalTo: cardRepositoriesRectangleView.trailingAnchor, constant: -20),
+			
+			// repoButtonURL
+			repoButtonURL.topAnchor.constraint(equalTo: cardRepositoriesRectangleView.topAnchor),
+			repoButtonURL.trailingAnchor.constraint(equalTo: cardRepositoriesRectangleView.trailingAnchor),
+			repoButtonURL.widthAnchor.constraint(equalToConstant: 50),
+			repoButtonURL.heightAnchor.constraint(equalToConstant: 40),
 			
 			// describeLabel
 			describeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
