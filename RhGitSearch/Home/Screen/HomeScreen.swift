@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeScreenProtocol: AnyObject {
-	func tappedSearchButton()
+	func tappedSearchButton(sender: UIButton)
 }
 
 class HomeScreen: UIView {
@@ -88,13 +88,13 @@ class HomeScreen: UIView {
 		button.clipsToBounds = true
 		button.layer.cornerRadius = 8
 		button.isEnabled = false
-		button.addTarget(self, action: #selector(tappedSearchButton), for: .touchUpInside)
+		button.addTarget(self, action: #selector(tappedSearchButton(sender:)), for: .touchUpInside)
 		
 		return button
 	}()
 	
-	@objc func tappedSearchButton(_ sender: UIButton) {
-		self.delegate?.tappedSearchButton()
+	@objc func tappedSearchButton(sender: UIButton) {
+		self.delegate?.tappedSearchButton(sender: sender)
 	}
 	
 	lazy var repositoriesCollectionView: UICollectionView = {

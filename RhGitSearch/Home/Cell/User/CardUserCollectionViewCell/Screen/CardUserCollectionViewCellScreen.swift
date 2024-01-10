@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CardUserCollectionViewCellScreenProtocol: AnyObject {
-	func tappedCardUserButtonURL()
+	func tappedCardUserSeeMoreButton()
 }
 
 class CardUserCollectionViewCellScreen: UIView {
@@ -44,7 +44,6 @@ class CardUserCollectionViewCellScreen: UIView {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Marlon \nSymczecym"
 		label.textColor = .white
 		label.font = UIFont.customFont(type: .medium, size: 20)
 		label.textAlignment = .left
@@ -69,7 +68,6 @@ class CardUserCollectionViewCellScreen: UIView {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "76"
 		label.textColor = .white
 		label.font = UIFont.customFont(type: .bold, size: 14)
 		label.textAlignment = .left
@@ -93,7 +91,6 @@ class CardUserCollectionViewCellScreen: UIView {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "51"
 		label.textColor = .white
 		label.font = UIFont.customFont(type: .bold, size: 14)
 		label.textAlignment = .left
@@ -101,30 +98,29 @@ class CardUserCollectionViewCellScreen: UIView {
 		return label
 	}()
 	
-	lazy var cardUserButtonURL: UIButton = {
+	lazy var cardUserSeeMoreButton: UIButton = {
 		let button = UIButton()
 		
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setTitle("Veja mais", for: .normal)
 		button.titleLabel?.font = UIFont.customFont(type: .bold, size: 14)
 		button.setTitleColor(.primaryDarkGreen, for: .normal)
-		button.backgroundColor = .white
+		button.backgroundColor = .lightGray
 		button.clipsToBounds = true
-		button.layer.cornerRadius = 8
-		button.addTarget(self, action: #selector(tappedCardUserButtonURL), for: .touchUpInside)
+		button.roundCorners(cornerRadiuns: 8, typeCorners: [.topRight, .bottomRight])
+		button.addTarget(self, action: #selector(tappedCardUserSeeMoreButton), for: .touchUpInside)
 		
 		return button
 	}()
 	
-	@objc func tappedCardUserButtonURL() {
-		self.delegate?.tappedCardUserButtonURL()
+	@objc func tappedCardUserSeeMoreButton() {
+		self.delegate?.tappedCardUserSeeMoreButton()
 	}
 	
 	lazy var cardUserLocationLabel: UILabel = {
 		let label = UILabel()
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.text = "Rio Negrinho, Santa Catarina, Brasil"
 		label.textColor = .white
 		label.font = UIFont.customFont(type: .regular, size: 14)
 		label.textAlignment = .left
@@ -147,7 +143,6 @@ class CardUserCollectionViewCellScreen: UIView {
 		let image = UIImageView()
 		
 		image.translatesAutoresizingMaskIntoConstraints = false
-		image.image = .imageAvatar
 		image.contentMode = .scaleAspectFill
 		image.clipsToBounds = true
 		image.layer.cornerRadius = 55
@@ -174,7 +169,7 @@ class CardUserCollectionViewCellScreen: UIView {
 		cardUserRectangleView.addSubview(cardUserFollowersNumberLabel)
 		cardUserRectangleView.addSubview(cardUserFollowingLabel)
 		cardUserRectangleView.addSubview(cardUserFollowingNumberLabel)
-		cardUserRectangleView.addSubview(cardUserButtonURL)
+		cardUserRectangleView.addSubview(cardUserSeeMoreButton)
 		cardUserRectangleView.addSubview(cardUserLocationLabel)
 		addSubview(cardUserCircleAvatarView)
 		cardUserCircleAvatarView.addSubview(cardUserAvatarImage)
@@ -215,11 +210,11 @@ class CardUserCollectionViewCellScreen: UIView {
 			cardUserFollowingNumberLabel.topAnchor.constraint(equalTo: cardUserFollowingLabel.topAnchor),
 			cardUserFollowingNumberLabel.leadingAnchor.constraint(equalTo: cardUserFollowingLabel.trailingAnchor, constant: 5),
 			
-			// cardUserButtonUrl
-			cardUserButtonURL.topAnchor.constraint(equalTo: cardUserFollowingLabel.bottomAnchor, constant: 20),
-			cardUserButtonURL.leadingAnchor.constraint(equalTo: cardUserFollowingLabel.leadingAnchor),
-			cardUserButtonURL.widthAnchor.constraint(equalToConstant: 100),
-			cardUserButtonURL.heightAnchor.constraint(equalToConstant: 30),
+			// cardUserSeeMoreButton
+			cardUserSeeMoreButton.topAnchor.constraint(equalTo: cardUserFollowingLabel.bottomAnchor, constant: 20),
+			cardUserSeeMoreButton.leadingAnchor.constraint(equalTo: cardUserRectangleView.leadingAnchor),
+			cardUserSeeMoreButton.widthAnchor.constraint(equalToConstant: 103),
+			cardUserSeeMoreButton.heightAnchor.constraint(equalToConstant: 30),
 			
 			// cardUserLocationLabel
 			cardUserLocationLabel.leadingAnchor.constraint(equalTo: cardUserNameLabel.leadingAnchor),

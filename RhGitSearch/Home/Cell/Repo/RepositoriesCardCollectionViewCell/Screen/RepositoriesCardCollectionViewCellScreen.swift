@@ -128,7 +128,7 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 			// titleLabel
 			titleLabel.topAnchor.constraint(equalTo: cardRepositoriesRectangleView.topAnchor, constant: 20),
 			titleLabel.leadingAnchor.constraint(equalTo: cardRepositoriesRectangleView.leadingAnchor, constant: 20),
-			titleLabel.trailingAnchor.constraint(equalTo: cardRepositoriesRectangleView.trailingAnchor, constant: -20),
+			titleLabel.trailingAnchor.constraint(equalTo: repoButtonURL.leadingAnchor, constant: -5),
 			
 			// repoButtonURL
 			repoButtonURL.topAnchor.constraint(equalTo: cardRepositoriesRectangleView.topAnchor),
@@ -139,14 +139,14 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 			// describeLabel
 			describeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
 			describeLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-			describeLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+			describeLabel.trailingAnchor.constraint(equalTo: cardRepositoriesRectangleView.trailingAnchor, constant: -20),
 			
 			// languageLabel
 			languageLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
 			languageLabel.bottomAnchor.constraint(equalTo: cardRepositoriesRectangleView.bottomAnchor, constant: -20),
 			
 			// updatedRepositorieLabel
-			updatedRepositorieLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+			updatedRepositorieLabel.trailingAnchor.constraint(equalTo: describeLabel.trailingAnchor),
 			updatedRepositorieLabel.bottomAnchor.constraint(equalTo: languageLabel.bottomAnchor),
 		])
 	}

@@ -31,12 +31,28 @@ class HomeVC: UIViewController {
 		
 		screen?.searchTextField.text = "Marlon Symczecym"
 		
+		Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+			CustomAnimations.magnifierAnimation(viewToAnimate: self.screen?.iconMaggnifierImage ?? UIView())
+		}
+		
 		viewModel.delegate(delegate: self)
+	}
+	
+	public func disabledButton(button: UIButton) {
+		button.isEnabled = false
+		button.backgroundColor = .detailYellow.withAlphaComponent(0.7)
+	}
+	
+	public func enabledButton(button: UIButton) {
+		button.isEnabled = true
+		button.backgroundColor = .detailYellow
 	}
 }
 
 extension HomeVC: HomeScreenProtocol {
-	func tappedSearchButton() {
+	func tappedSearchButton(sender: UIButton) {
+		CustomAnimations.searchButtonAnimationTapped(viewToAnimate: sender)
+		screen?.searchTextField.resignFirstResponder()
 		loading?.start()
 		
 		let userName = viewModel.removeSpaceTextField(textField: screen?.searchTextField.text ?? "")
@@ -53,6 +69,7 @@ extension HomeVC: HomeViewModelProtocol {
 			self.screen?.configProtocolsCollectionView(delegate: self, dataSource: self)
 			self.screen?.repositoriesCollectionView.reloadData()
 			self.screen?.searchTextField.text = ""
+			self.disabledButton(button: self.screen?.searchButton ?? UIButton())
 		}
 	}
 	
@@ -62,9 +79,10 @@ extension HomeVC: HomeViewModelProtocol {
 			
 			self.alert?.simpleAlert(title: "ATENÇÃO", message: "Usuário não encontrado")
 			self.screen?.searchTextField.text = ""
+			
+			self.disabledButton(button: self.screen?.searchButton ?? UIButton())
 		}
 	}
-	
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -88,6 +106,12 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 			return cell ?? UICollectionViewCell()
 		}
 	}
+	
+	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		if indexPath.row == 0 {
+			CustomAnimations.cardRepositoriesAnimation(viewToAnimate: cell)
+		}
+	}
 		
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		
@@ -99,11 +123,9 @@ extension HomeVC: UITextFieldDelegate {
 	
 	func textFieldDidChangeSelection(_ textField: UITextField) {
 		if viewModel.completeValidationTextField(textField: screen?.searchTextField.text ?? "") {
-			screen?.searchButton.backgroundColor = .detailYellow
-			screen?.searchButton.isEnabled = true
+			self.enabledButton(button: self.screen?.searchButton ?? UIButton())
 		} else {
-			screen?.searchButton.backgroundColor = .detailYellow.withAlphaComponent(0.7)
-			screen?.searchButton.isEnabled = false
+			self.disabledButton(button: self.screen?.searchButton ?? UIButton())
 		}
 	}
 	
@@ -111,5 +133,4 @@ extension HomeVC: UITextFieldDelegate {
 		textField.resignFirstResponder()
 		return false
 	}
-	
 }

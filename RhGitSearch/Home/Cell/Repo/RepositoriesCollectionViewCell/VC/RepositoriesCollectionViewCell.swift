@@ -74,6 +74,10 @@ extension RepositoriesCollectionViewCell: UICollectionViewDelegate, UICollection
 		return cell ?? UICollectionViewCell()
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		CustomAnimations.cardRepositoriesAnimation(viewToAnimate: cell)
+	}
+	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		
 		return CGSize(width: collectionView.frame.width, height: 165)

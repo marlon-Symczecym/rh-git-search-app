@@ -55,7 +55,7 @@ class CardUserCollectionViewCell: UICollectionViewCell {
 }
 
 extension CardUserCollectionViewCell: CardUserCollectionViewCellScreenProtocol {
-	func tappedCardUserButtonURL() {
+	func tappedCardUserSeeMoreButton() {
 		guard let url = URL(string: userURL ?? "") else { return }
 		UIApplication.shared.open(url)
 	}
