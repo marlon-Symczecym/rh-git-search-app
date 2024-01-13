@@ -104,8 +104,8 @@ class CardUserCollectionViewCellScreen: UIView {
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setTitle("Veja mais", for: .normal)
 		button.titleLabel?.font = UIFont.customFont(type: .bold, size: 14)
-		button.setTitleColor(.primaryDarkGreen, for: .normal)
-		button.backgroundColor = .lightGray
+		button.setTitleColor(.darkGray, for: .normal)
+		button.backgroundColor = .detailYellow
 		button.clipsToBounds = true
 		button.roundCorners(cornerRadiuns: 8, typeCorners: [.topRight, .bottomRight])
 		button.addTarget(self, action: #selector(tappedCardUserSeeMoreButton), for: .touchUpInside)

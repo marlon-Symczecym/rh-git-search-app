@@ -16,8 +16,6 @@ class RepositoriesCollectionViewCell: UICollectionViewCell {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 				
-		screen.configProtocolsCollectionView(delegate: self, dataSource: self)
-		
 		viewModel.delegate(delegate: self)
 		
 		configScreen()
@@ -52,6 +50,8 @@ class RepositoriesCollectionViewCell: UICollectionViewCell {
 extension RepositoriesCollectionViewCell: RepositoriesCardCollectionViewCellViewModelProtocol {
 	func success() {
 		DispatchQueue.main.async {
+			self.screen.cardRepositoriesCollectionView.contentOffset.y = 0
+			self.screen.configProtocolsCollectionView(delegate: self, dataSource: self)
 			self.screen.cardRepositoriesCollectionView.reloadData()
 		}
 	}
@@ -72,10 +72,6 @@ extension RepositoriesCollectionViewCell: UICollectionViewDelegate, UICollection
 		cell?.setupCell(data: viewModel.getRepos(indexPath: indexPath))
 		
 		return cell ?? UICollectionViewCell()
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-		CustomAnimations.cardRepositoriesAnimation(viewToAnimate: cell)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

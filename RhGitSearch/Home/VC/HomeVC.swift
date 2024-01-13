@@ -31,11 +31,15 @@ class HomeVC: UIViewController {
 		
 		screen?.searchTextField.text = "Marlon Symczecym"
 		
+		loadingAnimations()
+		
+		viewModel.delegate(delegate: self)
+	}
+	
+	private func loadingAnimations() {
 		Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
 			CustomAnimations.magnifierAnimation(viewToAnimate: self.screen?.iconMaggnifierImage ?? UIView())
 		}
-		
-		viewModel.delegate(delegate: self)
 	}
 	
 	public func disabledButton(button: UIButton) {
@@ -70,6 +74,7 @@ extension HomeVC: HomeViewModelProtocol {
 			self.screen?.repositoriesCollectionView.reloadData()
 			self.screen?.searchTextField.text = ""
 			self.disabledButton(button: self.screen?.searchButton ?? UIButton())
+			self.screen?.repositoriesCollectionView.contentOffset.y = 0
 		}
 	}
 	
@@ -102,6 +107,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RepositoriesCollectionViewCell.identifier, for: indexPath) as? RepositoriesCollectionViewCell
 			
 			cell?.setupCell(reposURL: viewModel.getUser().reposURL ?? "",publicRepo: viewModel.getPublicRepos())
+			CustomAnimations.repositoriesAnimation(viewToAnimate: cell ?? UIView())
 			
 			return cell ?? UICollectionViewCell()
 		}
@@ -109,7 +115,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 	
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 		if indexPath.row == 0 {
-			CustomAnimations.cardRepositoriesAnimation(viewToAnimate: cell)
+			CustomAnimations.cardUserAnimation(viewToAnimate: cell)
 		}
 	}
 		

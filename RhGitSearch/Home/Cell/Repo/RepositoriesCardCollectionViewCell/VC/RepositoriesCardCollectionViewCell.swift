@@ -20,6 +20,10 @@ class RepositoriesCardCollectionViewCell: UICollectionViewCell {
 		
 		configScreen()
 		configConstraints()
+		
+		Timer.scheduledTimer(withTimeInterval: 8, repeats: true) { timer in
+			CustomAnimations.repoButtonURLAnimation(viewToAnimate: self.screen.repoButtonURL)
+		}
 	}
 	
 	required init?(coder: NSCoder) {

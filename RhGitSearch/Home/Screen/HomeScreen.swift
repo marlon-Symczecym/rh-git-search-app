@@ -31,7 +31,7 @@ class HomeScreen: UIView {
 		return label
 	}()
 	
-	lazy var imageLayerTopUIImage: UIImageView = {
+	lazy var waveImage: UIImageView = {
 		let image = UIImageView()
 		
 		image.translatesAutoresizingMaskIntoConstraints = false
@@ -135,7 +135,7 @@ class HomeScreen: UIView {
 	
 	private func addElements() {
 		addSubview(titleHeaderLabel)
-		addSubview(imageLayerTopUIImage)
+		addSubview(waveImage)
 		
 		addSubview(textFieldRectangleView)
 		textFieldRectangleView.addSubview(iconMaggnifierImage)
@@ -154,13 +154,13 @@ class HomeScreen: UIView {
 			titleHeaderLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
 			
 			// imageLayerTopUIImage
-			imageLayerTopUIImage.topAnchor.constraint(equalTo: titleHeaderLabel.bottomAnchor, constant: 20),
-			imageLayerTopUIImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-			imageLayerTopUIImage.widthAnchor.constraint(equalToConstant: 393),
-			imageLayerTopUIImage.heightAnchor.constraint(equalToConstant: 279),
+			waveImage.topAnchor.constraint(equalTo: titleHeaderLabel.bottomAnchor, constant: 20),
+			waveImage.centerXAnchor.constraint(equalTo: centerXAnchor),
+			waveImage.widthAnchor.constraint(equalToConstant: 393),
+			waveImage.heightAnchor.constraint(equalToConstant: 279),
 			
 			// textFieldRectangleView
-			textFieldRectangleView.topAnchor.constraint(equalTo: imageLayerTopUIImage.topAnchor, constant: 44),
+			textFieldRectangleView.topAnchor.constraint(equalTo: waveImage.topAnchor, constant: 44),
 			textFieldRectangleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 			textFieldRectangleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 			textFieldRectangleView.heightAnchor.constraint(equalToConstant: 60),

@@ -124,6 +124,7 @@ class RepositoriesCardCollectionViewCellScreen: UIView {
 			cardRepositoriesRectangleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 			cardRepositoriesRectangleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 			cardRepositoriesRectangleView.heightAnchor.constraint(equalToConstant: 155),
+			cardRepositoriesRectangleView.centerYAnchor.constraint(equalTo: centerYAnchor),
 			
 			// titleLabel
 			titleLabel.topAnchor.constraint(equalTo: cardRepositoriesRectangleView.topAnchor, constant: 20),

@@ -10,14 +10,14 @@ import UIKit
 
 extension UIImage {
 	class var imageLayerTop: UIImage {
-		guard let image = UIImage(named: "img-layer-top") else {
+		guard let image = UIImage(named: "wave-header") else {
 			return UIImage()
 		}
 		return image
 	}
 	
 	class var imageLayerCardUser: UIImage {
-		guard let image = UIImage(named: "img-layer-card-user") else {
+		guard let image = UIImage(named: "wave-card-user") else {
 			return UIImage()
 		}
 		return image
