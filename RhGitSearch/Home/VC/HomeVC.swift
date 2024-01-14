@@ -29,8 +29,6 @@ class HomeVC: UIViewController {
 		screen?.configDelegateTextField(delegate: self)
 		screen?.delegate(delegate: self)
 		
-		screen?.searchTextField.text = "Marlon Symczecym"
-		
 		loadingAnimations()
 		
 		viewModel.delegate(delegate: self)
@@ -82,7 +80,7 @@ extension HomeVC: HomeViewModelProtocol {
 		DispatchQueue.main.async {
 			self.loading?.stop()
 			
-			self.alert?.simpleAlert(title: "ATENÇÃO", message: "Usuário não encontrado")
+			self.alert?.simpleAlert(title: "ATENÇÃO", message: "Usuário não encontrado!")
 			self.screen?.searchTextField.text = ""
 			
 			self.disabledButton(button: self.screen?.searchButton ?? UIButton())

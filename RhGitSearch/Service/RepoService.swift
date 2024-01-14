@@ -15,7 +15,11 @@ enum ReposErrorDetail: Swift.Error {
 class RepoService {
 	
 	public func reposGetDataJsonURLSession(reposURL: String, completion: @escaping([Repo]?, Error?)-> Void) {
-		let urlString: String = reposURL
+		let urlRepo: String = reposURL
+		let perPage: String = "per_page=100"
+		let sort: String = "sort=updated"
+		
+		let urlString: String = "\(urlRepo)?\(perPage)&\(sort)"
 		
 		guard let url: URL = URL(string: urlString) else {
 			return completion(nil, ReposErrorDetail.errorURL(urlString: urlString))
