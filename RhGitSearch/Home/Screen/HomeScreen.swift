@@ -73,6 +73,7 @@ class HomeScreen: UIView {
 		tf.textColor = .mediumGray
 		tf.textAlignment = .left
 		tf.backgroundColor = .clear
+		tf.autocapitalizationType = .none
 		
 		return tf
 	}()
