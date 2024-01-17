@@ -87,7 +87,7 @@ E finalmente a tela completa, é onde aparece todas as informações que se nece
   <img src="images_results/result_final_2.png" alt="resultado final" width="300"/>
 </div>
 
-## Instruções de Uso4
+## Instruções de Uso
 
 Para testar o projeto em questão, só seguir as seguintes dicas:
 
